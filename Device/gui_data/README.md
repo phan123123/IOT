@@ -41,6 +41,6 @@ return char
 6.change() setup giao thức ISR cho 	attachInterrupt()
 setup trong main attachInterrupt(myserial.get_fre(), resetkey, CHANGE);
 
-X
+Xem ví dụ để hi
 
 	
