@@ -90,7 +90,7 @@ char Serial_make::read()
 {
   if (available() == 0) return char(0);
   char ch = S[0];
-  S.remove(0);
+  S.remove(0,1);
   return ch;
 
 
