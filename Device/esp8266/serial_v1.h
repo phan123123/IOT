@@ -23,6 +23,8 @@ class Serial_make
     void start_key();
     void change();
 };
+
+
 void Serial_make::send_byte(int x)
 {
   int a[12];
@@ -43,11 +45,11 @@ void Serial_make::send_byte(int x)
     digitalWrite(pin_frequency, HIGH);  // tang dien ap
 
 
-    delay(frequency);
+    delayMicroseconds(frequency);
 
     digitalWrite(pin_input, status_pin_input);
     digitalWrite(pin_frequency, LOW);  // giam dien ap
-    delay(frequency);
+    delayMicroseconds(frequency);
 
   }
 }
@@ -90,7 +92,7 @@ char Serial_make::read()
 {
   if (available() == 0) return char(0);
   char ch = S[0];
-  S.remove(0);
+  S.remove(0, 1);
   return ch;
 
 
