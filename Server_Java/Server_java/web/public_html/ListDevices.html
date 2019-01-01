@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+        <!-- //custom-theme  -->
+        <link rel="stylesheet" href="css/admin.css">
+        <!-- font-awesome icons -->
+        <link rel="stylesheet" href="css/font-awesome.css"> 
+        <!-- script file here -->
+        <script src="js/ListDevices.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <br><br><br>
+        <div class="menu">
+            <ul>
+                <!--<li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Diễn đàn</a></li>-->
+                <li><a href="ListUsers.html">List Users</a></li>
+                <li><a href="ListDevices.html">List Devices</a></li>
+                <li><a href="Login.html">Log out</a></li>
+            </ul>
+        </div>
+        <br><br><br><br>
+        <div class="table-responsive">
+            <table>
+                <caption class="caption">List Devices</caption>
+				<thead>
+					<tr class="table-title">
+						<th>Name</th>
+						<th>Status</th>
+						<th>Type</th>
+						<th>Description</th>
+						<th>License</th>
+						<th>Send</th>
+					</tr>
+				</thead>
+				<tbody id="tableDevices">
+				</tbody>
+            </table>
+        </div>
+		<div id="mySidenav" class="sidenav">
+		</div>
+    </body>
+</html>

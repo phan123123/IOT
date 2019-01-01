@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!--<include file="example.xml"/>-->
+    <!--Configuration for the default package.--> 
+    <constant name="struts.action.excludePattern" value="/actions.*"></constant>
+    <package name="default" extends="struts-default"> 
+        <action name="login" class="example.Login">
+            <result name="error" type="redirect">${url}</result>
+            <result name="success" type="redirect">${url}</result>
+        </action>       
+        <action name = "upload" class = "example.UpLoadFile">
+            <result name = "success">jsp/success.jsp</result>
+            <result name = "error">jsp/error.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <!-- //custom-theme  -->
+        <link rel="stylesheet" href="public_html/css/style.css">
+        <!-- font-awesome icons -->
+        <link href="public_html/css/font-awesome.css" rel="stylesheet"> 
+        <!--Script file here-->
+        <script src="public_html/js/Login.js"></script>
+		<!--Bootstrap file here-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+	<div class="container-fluid">
+        <div class="login-form w3_form">
+            <!--  Title-->
+            <div class="login-title w3_title">
+                <br><br>
+            </div>
+            <div class="login w3_login">
+                <h2 class="login-header w3_header">Log in</h2>
+                <div class="w3l_grid">
+                    <form method="POST" class="login-container" action="/Server_java/login.action">
+                        <input type="username" placeholder="Username" name="username" id="username" required="">
+                        <input type="password" placeholder="Password" name="password" id="password" required="">
+                        <input type="submit" value="Login">
+                    </form>
+                    <div class="second-section w3_section">
+                        <div class="bottom-header w3_bottom">
+                            <h3>OR</h3>
+                        </div>
+                    </div>
+
+                    <div class="bottom-text w3_bottom_text">
+                        <p>No account yet?<a href="Signup.html">Signup</a></p>
+                        <h4> <a href="#">Forgot your password?</a></h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+	</div>
+    </body>
+</html>
