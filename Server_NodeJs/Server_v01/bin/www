@@ -1,0 +1,146 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var IO = require('../manager/MessageHandler.js');
+const port = process.env.PORT || 4000;
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+server.listen(port, () => {
+    console.log('Connected')
+});
+io.on('connect', IO.handleIO);
+// var debug = require('debug')('untitled1:server');
+// var http = require('http');
+// var devicesManager = require('../manager/devicesManager');
+// var Device = require('../object/Device');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+// var port = normalizePort(process.env.PORT || '3000');
+// app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+// var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+// server.listen(port);
+// server.on('error', onError);
+// server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+//
+// function normalizePort(val) {
+//   var port = parseInt(val, 10);
+//
+//   if (isNaN(port)) {
+//     // named pipe
+//     return val;
+//   }
+//
+//   if (port >= 0) {
+//     // port number
+//     return port;
+//   }
+//
+//   return false;
+// }
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+// function onError(error) {
+//   if (error.syscall !== 'listen') {
+//     throw error;
+//   }
+//
+//   var bind = typeof port === 'string'
+//     ? 'Pipe ' + port
+//     : 'Port ' + port;
+//
+//   // handle specific listen errors with friendly messages
+//   switch (error.code) {
+//     case 'EACCES':
+//       console.error(bind + ' requires elevated privileges');
+//       process.exit(1);
+//       break;
+//     case 'EADDRINUSE':
+//       console.error(bind + ' is already in use');
+//       process.exit(1);
+//       break;
+//     default:
+//       throw error;
+//   }
+// }
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+// function onListening() {
+//   var addr = server.address();
+//   var bind = typeof addr === 'string'
+//     ? 'pipe ' + addr
+//     : 'port ' + addr.port;
+//   debug('Listening on ' + bind);
+// }
+
+
+// Nghĩa là client là 1 cổng vd: 3000 còn server express là 5000 à bro?
+// không nghĩa là cái server đang xây dựng nó có phần thao tác với các request http thường,
+// 1 phần sẽ lấy dữ liệu realtime trên websocket nên muốn tách làm 2?
+// ui dào ơi.. socket thì bác cứ ghép vào lấy realtime nó vẫn realtime lấy requét nó cũng ko ảnh hyởng gì cả .. như em đây này qua fb e gửi ảnh cho.
+
+
+
+    // (socket) => {
+    // socket.emit('news');
+    // console.log('Connected SocketIO ID: ', socket.id);
+    // socket.on('disconnect', function () {
+    //     console.log(socket.id+ 'ID Disconnected');
+    // });
+    // socket.on('message',(data)=>{
+    //     console.log(socket.id + ' send '+data);
+    //     socket.send('this is res msg');
+    // });
+
+// io.on('massage',(socket)=>{
+//     socket.emit('msg');
+//     console.log(socket.id + ' send massage');
+// });
+
+// //handle the req
+// function handleIO(socket) {
+//     function disconnect() {
+//           console.log('disconnected');
+//     }
+//     console.log('connected');
+//     socket.on("disconnect",disconnect);
+// }
+//
+//
+// // creat websocket server
+// var io = require('socket.io')(4000,{
+//     path : '/test',
+//     // pingInterval: 1000,
+//     // pingTimeout: 5000,
+//     origins: '*:*',
+//     log: 1,
+//     agent: false,
+//     transports: ['websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling', 'polling']
+// });
+// io.on("connection",handleIO);
