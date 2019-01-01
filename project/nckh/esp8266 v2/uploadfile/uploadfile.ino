@@ -1,9 +1,14 @@
+
+/***************** MAIN ************************
+ *  
+ */
+
 #define MAXJSON 500
-#include <ArduinoJson.h>
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <ESP8266WiFiMulti.h>
-#include <ESP8266mDNS.h>
+#include <ArduinoJson.h>  // library Json. 
+#include <ESP8266WiFi.h>  // library Wifi
+//#include <WiFiClient.h>
+//#include <ESP8266WiFiMulti.h>
+//#include <ESP8266mDNS.h>
 #include <ESP8266WebServer.h>
 #include <FS.h>   // Include the SPIFFS library
 #include <WebSocketsClient.h>
@@ -38,7 +43,7 @@ void setup()
 
   }
   setup_wifi();
-  mySerial.open_send(12 ,14, 100); //D6 D5
+  mySerial.open_send(12 ,14, D2, 100); //D6 D5 mo luong ket noi den 2 cong d5 d6
 
   Serial.println('\n');
 
@@ -48,6 +53,7 @@ void setup()
 }
 
 void loop() {
+  mySerial.write("");
   webSocket.loop();
   server.handleClient();
   if (WiFi.status() != WL_CONNECTED) status_wf = "connect error";

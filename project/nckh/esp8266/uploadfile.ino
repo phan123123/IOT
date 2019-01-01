@@ -7,12 +7,10 @@
 #include <ESP8266WebServer.h>
 #include <FS.h>   // Include the SPIFFS library
 #include <WebSocketsClient.h>
-
 #include "serial_v1.h"
-#include "data.h"
 #include "file.h"
 
-
+#include "data.h"
 #include "setup_wifi.h"  // setup wifi
 #include "server.h"
 #include "websocket.h"

@@ -7,12 +7,12 @@
 #include <ESP8266WebServer.h>
 #include <FS.h>   // Include the SPIFFS library
 #include <WebSocketsClient.h>
-
+#include <Hash.h>
 #include "serial_v1.h"
 #include "data.h"
 #include "file.h"
 
-
+#include "audio.h"
 #include "setup_wifi.h"  // setup wifi
 #include "server.h"
 #include "websocket.h"
@@ -38,18 +38,21 @@ void setup()
 
   }
   setup_wifi();
-  mySerial.open_send(12 ,14, 100); //D6 D5
+  //mySerial.open_send(12 ,14, D2, 100); //D6 D5
 
   Serial.println('\n');
 
   // server
   setup_server();
   setup_websocket();
+  setup_audio();
+  
 }
 
 void loop() {
+  //mySerial.write("");
   webSocket.loop();
   server.handleClient();
   if (WiFi.status() != WL_CONNECTED) status_wf = "connect error";
-
+  
 }
